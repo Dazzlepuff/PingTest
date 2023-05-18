@@ -3,6 +3,7 @@ if not exist "C:\RITE" mkdir "C:\RITE"
 if not exist "C:\RITE\TerminalPingTest" mkdir "C:\RITE\TerminalPingTest"
 cd C:\RITE\TerminalPingTest
 curl -LOJ "https://raw.githubusercontent.com/Dazzlepuff/PingTest/main/TerminalPingTest/CreatePingTest.bat"
+echo TERMINALIP=192.168.0.125 > config.txt
 cd "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup"
 curl -LOJ "https://raw.githubusercontent.com/Dazzlepuff/PingTest/main/TerminalPingTest/RunPingTest.vbs"
 RunPingTest.vbs
