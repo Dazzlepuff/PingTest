@@ -3,8 +3,9 @@
 mkdir "C:\RITE\TerminalPingTest\PingLogs"
 
 for /f "tokens=3" %%G in ('route print ^| findstr "\<0.0.0.0\>"') do set GATEWAY=%%G
-set TERMINALIP=192.168.0.125
-
+for /f "usebackq tokens=1* delims==" %%a in ("config.txt") do (
+    if /i "%%a"=="TERMINALIP" set TERMINALIP=%%b
+)
 for /f "tokens=1-4 delims=:/ " %%A in ("%DATE% %TIME%") do (
     set TIMESTAMP=%%D_%%B-%%C
 )
