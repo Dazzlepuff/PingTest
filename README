@@ -1,0 +1,21 @@
+This is for setting up a ping log to a customers Terminal and Router through the screen connect command line.
+If the customer has a startup folder at cd "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup" then use the PingTestCallStartup.txt otherwise use the PingTestCallLocal.txr
+
+
+To use the two text files, change the IP in this line
+echo TERMINALIP=192.168.100.173 > config.txt
+To the terminals IP.
+
+The Routers IP is pulled automatically.
+
+The results of the pings logs can be found at
+C:\RITE\TerminalPingTest\PingLogs
+Send the CMD 
+dir C:\RITE\TerminalPingTest\PingLogs
+to get all logs in that directory and then use this CMD
+type C:\RITE\TerminalPingTest\PingLogs\pinglog_2023_05-18_02-24.txt
+to get the results of the logs. Make sure to replace the pinglog_2023_05-18_02-24.txt portion with the log found earlier using dir.
+
+This is all done in the background and the customer will not see anything.
+
+The PingTestCallStartup will automatically call the ping test to start when the computer is reset. If you are not using the PingTestCallStartup.txt you need to curl the RunPingTest.VBS to the users startup folder.
